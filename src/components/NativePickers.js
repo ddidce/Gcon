@@ -1,34 +1,47 @@
+import 'date-fns';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import { ko } from "date-fns/locale";
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardTimePicker,
+    KeyboardDatePicker,
+    } from '@material-ui/pickers';
+import { InputAdornment } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    textField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
-        width: '300px',
-    },
-    }));
+    export default function MaterialUIPickers() {
+    // The first commit of Material-UI
+    const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
 
-    export default function DatePickers() {
-    const classes = useStyles();
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
 
     return (
-        <form className={classes.container} noValidate>
-        <TextField
-            id="date"
-            label="Birthday"
-            type="date"
-            defaultValue="설립일을 선택해주세요"
-            className={classes.textField}
-            InputLabelProps={{
-            shrink: true,
+        <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ko}>
+        <Grid container justify="space-around">
+            <KeyboardDatePicker
+            disableToolbar
+            inputVariant="outlined"  
+            format="MM/dd/yyyy"
+            margin="normal"
+            id="date-picker-inline"
+            label="Date picker inline"
+            value={selectedDate}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+                'aria-label': 'change date',
             }}
-        />
-        </form>
+            InputProps = {{
+                endAdornment : (
+                    <InputAdornment position="end" className="select">
+
+                    </InputAdornment>
+                )
+            }}
+            />
+        </Grid>
+        </MuiPickersUtilsProvider>
     );
 }

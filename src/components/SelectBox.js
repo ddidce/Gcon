@@ -9,14 +9,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
-        margin: theme.spacing(1),
-        // width: '800px',
-        // height: '55px',
-        // opacity: '0.5',
-        // border: 'solid 1px #7d8184',
-        // margin : 0,
-        // borderRadius : '4px',
-        width: '300px',
+        width: '100%',
 
     },
     selectEmpty: {
@@ -38,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
         [name]: event.target.value,
         });
     };
-
     
 
     return (
@@ -60,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
             <option value={20}>Twenty</option>
             <option value={30}>Thirty</option>
             </Select>
+            <FormHelperText>{state.age ?"완료되었습니다." : "필수 입력사항입니다."}</FormHelperText>
         </FormControl>
         </div>
     );
