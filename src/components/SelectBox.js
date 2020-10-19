@@ -79,9 +79,10 @@ const fontStyle = {
             >
             
             <option aria-label="None" value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <option value={10}>₩ 원</option>
+            <option value={20}>$ 달러</option>
+            <option value={30}>€ 유로</option>
+            <option value={40}>¥ 엔화</option>
             </Select>
             <FormHelperText style={fontStyle}>
                 {state.age ?"완료되었습니다." : "필수 입력사항입니다."}</FormHelperText>
