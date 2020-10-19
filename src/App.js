@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './App.css'
-import './css/font.css'
+import './css/App.css';
+import './css/font.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import SelectBox from './components/SelectBox';
@@ -13,7 +13,6 @@ import { FormHelperText, Link } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
-        // margin: theme.spacing(1),
         position : 'relative',
         top : '68px',
         display : 'flex',
@@ -25,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
         width: '51px',
         height: '18px',
         fontFamily: 'NotoSansCJKkr',
-        // fontSize: 'px',
         fontWeight: 'normal',
         fontStretch: 'normal',
         fontStyle: 'normal',
@@ -48,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
         left : '15px',
         color : '#ff0000',
         fontFamily : 'AppleSDFont',
+        top: '70px'
     }
 
     const fontStyle_se = {
@@ -205,7 +204,6 @@ const useStyles = makeStyles((theme) => ({
                 variant="outlined"
                 onChange={handleCompany}
                 value={company}
-                // onKeyPress={checkCom.bind()}
             />
             <FormHelperText style={fontStyle_th}>
                 {

@@ -6,7 +6,6 @@ import DateFnsUtils from '@date-io/date-fns';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     MuiPickersUtilsProvider,
-    KeyboardTimePicker,
     KeyboardDatePicker,
     } from '@material-ui/pickers';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';

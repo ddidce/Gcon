@@ -23,14 +23,12 @@ const useStyles = makeStyles((theme) => ({
     arrow : {
         "& .MuiSelect-icon" : {
             position: 'absolute',
-            // right: '11px',
             fontSize : '50px',
             transform : 'scale(0.7, 1.5)',
             color : 'black',
             top : 0,
             // left : 0
             right : 0,
-            // verticalAlign: 'middle'
         }
     }
     }));
@@ -68,9 +66,6 @@ const fontStyle = {
         <div>
         <FormControl variant="outlined" className={classes.formControl} style={fSelect}>
             <InputLabel htmlFor="outlined-age-native-simple" className="outLine">화폐단위를 선택하세요.</InputLabel>
-            {/* <ArrowDropDownIcon 
-            className={classes.arrow}  
-            /> */}
             <Select
             native
             value={state.age}
