@@ -8,22 +8,27 @@ import Select from '@material-ui/core/Select';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles((theme) => ({
-    formControl: {
-        // width: '100%',
-
-    },
     selectEmpty: {
         marginTop: theme.spacing(2),
     },
-    arrow : {
-        "& .MuiSelect-icon" : {
-
-        }
+    lang : {
+        background : 'none',
     },
-    // lang : {
-    //     position : 'absolute',
-    //     bottom : '0',
-    // }
+    arrow : {
+        fontSize : '12px',
+        left : '15px',
+        // fontFamily : '',
+
+        "& .MuiSelect-icon" : {
+            position: 'absolute',
+            // right: '11px',
+            // fontSize : '50px',
+            // transform : 'scale(0.7, 1.5)',
+            left : '35px',
+            color : 'black',
+            top : '0px',
+        }
+    }
     }));
 
     export default function NativeSelects() {
@@ -50,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
             className={classes.arrow}  
             /> */}
             <Select
-            className={classes.lang}
+            disableUnderline={true}
             native
             value={state.age}
             onChange={handleChange}
@@ -66,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
             <option value={10}>Ten</option>
             <option value={20}>Twenty</option>
             <option value={30}>Thirty</option> */}
-            <option  aria-label="한국어" value="">한국어</option>
+            <option  aria-label="한국어" value="한국어">한국어</option>
             <option value="영어">English</option>
             <option value="일본어">日本</option>
             <option value="중국어">中文</option>

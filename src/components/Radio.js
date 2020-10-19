@@ -30,29 +30,32 @@ const GreenRadio = withStyles({
                 <GreenRadio
                 checked={selectedValue === 'a'}
                 onChange={handleChange}
+                id ='r1'
                 value="a"
                 name="radio-button-demo"
                 inputProps={{ 'aria-label': 'A' }}
                 />
-                <span>번역회사</span>
+                <label htmlFor="r1">번역회사</label>
 
                 <GreenRadio
                 checked={selectedValue === 'b'}
                 onChange={handleChange}
                 value="b"
+                id="r2"
                 name="radio-button-demo"
                 inputProps={{ 'aria-label': 'B' }}
                 />
-                <span>의뢰인</span>
+                <label htmlFor="r2">의뢰인</label>
 
                 <GreenRadio
                 checked={selectedValue === 'c'}
                 onChange={handleChange}
                 value="c"
+                id="r3"
                 name="radio-button-demo"
                 inputProps={{ 'aria-label': 'C' }}
                 />
-                <span>번역가</span>
+                <label htmlFor="r3">번역가</label>
             </div>
         </div>
     </div>

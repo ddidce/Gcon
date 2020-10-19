@@ -7,7 +7,12 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
+
+
+
+
 const useStyles = makeStyles((theme) => ({
+
     formControl: {
         width: '100%',
 
@@ -30,6 +35,18 @@ const useStyles = makeStyles((theme) => ({
     }
     }));
 
+//컴포넌트 스타일링
+const fSelect = {
+    position : 'relative',
+    top : '45px'
+}
+
+
+//폰트 스타일링
+const fontStyle = {
+    color : '#ff0000'
+}
+
     export default function NativeSelects() {
     const classes = useStyles();
     const [state, setState] = React.useState({
@@ -48,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 
     return (
         <div>
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl variant="outlined" className={classes.formControl} style={fSelect}>
             <InputLabel htmlFor="outlined-age-native-simple" className="outLine">화폐단위를 선택하세요.</InputLabel>
             {/* <ArrowDropDownIcon 
             className={classes.arrow}  
@@ -70,7 +87,8 @@ const useStyles = makeStyles((theme) => ({
             <option value={20}>Twenty</option>
             <option value={30}>Thirty</option>
             </Select>
-            <FormHelperText>{state.age ?"완료되었습니다." : "필수 입력사항입니다."}</FormHelperText>
+            <FormHelperText style={fontStyle}>
+                {state.age ?"완료되었습니다." : "필수 입력사항입니다."}</FormHelperText>
         </FormControl>
         </div>
     );

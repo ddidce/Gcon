@@ -6,7 +6,7 @@ import SelectBox from './components/SelectBox';
 import NativePickers from './components/NativePickers';
 import Radio from './components/Radio';
 import LangSelect from './components/LangSelect'
-import { FormHelperText } from '@material-ui/core';
+import { FormHelperText, Link } from '@material-ui/core';
 
 //라이브러리 스타일
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight :'72px',
         marginLeft :'73px',
         },
+        
     lang : {
         width: '51px',
         height: '18px',
@@ -39,17 +40,31 @@ const useStyles = makeStyles((theme) => ({
     },
     }));
 
-//컴포넌트 스타일
+                                    //컴포넌트 스타일
+
+    //텍스트 
     const fontStyle = {
-        left : '5px',
+        left : '15px',
         color : '#ff0000',
     }
 
     const fontStyle_se = {
         color : '#ff0000',
-        left : '5px',
+        left : '15px',
         top : '85px',
+        fontSize : '10.5px',
+        letterSpacing : '0.2px',
+        width: '461px',
     }
+
+    const fontStyle_th = {
+        color : '#ff0000',
+        left : '15px',
+        top : '100px',
+    }
+
+
+    //컴포넌트
     const fTextFields = {
         position : 'relative',
         top : '70px',
@@ -63,8 +78,21 @@ const useStyles = makeStyles((theme) => ({
 
     const tTextFields = {
         position : 'relative',
-        top : '100px,'
+        top : '100px',
     }
+
+    const buttonStyle = {
+        position : 'relative',
+        top : '90px',
+    }
+
+    const langStyle = {
+        position : 'relative',
+        top: '155px',
+        left: '5px',
+        fontSize : '12px',
+    }
+
     export default function BasicTextFields() {
     const classes = useStyles();
     const [email , setEmail] = useState('');
@@ -163,19 +191,24 @@ const useStyles = makeStyles((theme) => ({
                 value={company}
                 // onKeyPress={checkCom.bind()}
             />
-            <FormHelperText style={fontStyle}>
+            <FormHelperText style={fontStyle_th}>
                 {
                     company ? "완료되었습니다." : "필수 입력사항입니다."
                 }
             </FormHelperText>
             <SelectBox />
             <NativePickers />
-            <div>
-                <button className="fButton">다음</button>
-                <button className="sButton"><p>로그인</p></button>
+            <div style ={buttonStyle}>
+                <button className="fButton">
+                    <Link style={{color : '#fff'}}>다음</Link>
+                </button>
+
+                <button className="sButton">
+                    <Link style={{color : 'rgba(0, 0, 0, 0.6)', textDecoration : 'underLine'}}>로그인</Link>
+                </button>
             </div>
         </form>
-        <div className="lang">
+        <div className="lang" style={langStyle}>
             <LangSelect className={classes.lang}/>
         </div>
         </div>

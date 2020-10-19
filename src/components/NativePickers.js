@@ -43,6 +43,19 @@ import { FormHelperText } from '@material-ui/core';
         },
         }));
 
+    // 텍스트 스타일링
+    const fontStyle = {
+        color : '#ff0000',
+        position : 'relative',
+        top : '-10px',
+        left : '-58px',
+    }
+
+    const fPickers = {
+        position : 'relative',
+        top : '110px',
+    }
+
     export default function MaterialUIPickers() {
         const classes = useStyles();
     // The first commit of Material-UI
@@ -55,7 +68,7 @@ import { FormHelperText } from '@material-ui/core';
 
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ko}>
-        <Grid container justify="space-around" className={classes.root}>
+        <Grid container justify="space-around" className={classes.root} style={fPickers}>
             <KeyboardDatePicker 
             disableToolbar
             inputVariant="outlined"  
@@ -75,7 +88,9 @@ import { FormHelperText } from '@material-ui/core';
                             />}
             >
             </KeyboardDatePicker> 
-            <FormHelperText>{selectedDate ?"완료되었습니다." : "123필수 입력사항입니다."}</FormHelperText>
+            <FormHelperText style={fontStyle}>
+                {selectedDate ?"완료되었습니다." : "필수 입력사항입니다."}
+            </FormHelperText>
         </Grid>
         </MuiPickersUtilsProvider>
     );
