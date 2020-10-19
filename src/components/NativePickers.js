@@ -1,46 +1,81 @@
 import 'date-fns';
-import React from 'react';
+import React, { useState } from 'react';
 import { ko } from "date-fns/locale";
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
+import { makeStyles } from '@material-ui/core/styles';
 import {
     MuiPickersUtilsProvider,
     KeyboardTimePicker,
     KeyboardDatePicker,
     } from '@material-ui/pickers';
-import { InputAdornment } from '@material-ui/core';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { FormHelperText } from '@material-ui/core';
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& > *': {
+                left : '-12.5%',
+                width: '440px',
+                height: '55px',
+            },
+            "& .MuiInputBase-root": {
+                padding: 0,
+                "& .MuiButtonBase-root": {
+                    position: 'relative',
+                    width : 0,
+                    height : 0,
+                    padding: 0,
+                    paddingLeft: 10,
+                },
+                "& .MuiInputBase-input": {
+                padding: 15,
+                paddingLeft: 15,
+                },
+            }
+        },
+        arrow : {
+            position: 'relative',
+            right: '24px',
+            fontSize : '50px',
+            transform : 'scale(0.7, 1.5)',
+            color : 'black',
+        },
+        }));
 
     export default function MaterialUIPickers() {
+        const classes = useStyles();
     // The first commit of Material-UI
-    const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+    const [selectedDate, setSelectedDate] = useState(null);
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
+        console.log(date);
     };
 
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ko}>
-        <Grid container justify="space-around">
-            <KeyboardDatePicker
+        <Grid container justify="space-around" className={classes.root}>
+            <KeyboardDatePicker 
             disableToolbar
             inputVariant="outlined"  
             format="MM/dd/yyyy"
             margin="normal"
             id="date-picker-inline"
-            label="Date picker inline"
+            placeholder="설립일을 선택하세요."
             value={selectedDate}
             onChange={handleDateChange}
             KeyboardButtonProps={{
                 'aria-label': 'change date',
             }}
-            InputProps = {{
-                endAdornment : (
-                    <InputAdornment position="end" className="select">
-
-                    </InputAdornment>
-                )
-            }}
-            />
+            className={classes.text}
+            keyboardIcon={<ArrowDropDownIcon 
+                            className={classes.arrow}
+                            
+                            />}
+            >
+            </KeyboardDatePicker> 
+            <FormHelperText>{selectedDate ?"완료되었습니다." : "123필수 입력사항입니다."}</FormHelperText>
         </Grid>
         </MuiPickersUtilsProvider>
     );

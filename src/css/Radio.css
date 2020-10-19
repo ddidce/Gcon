@@ -1,9 +1,4 @@
-.signUp {
-    position: relative;
-    display: flex;
-}
 .radio_form {
     position: relative;
-    text-align: left;
-    margin: 0 auto;
+    left: -10px;
 }

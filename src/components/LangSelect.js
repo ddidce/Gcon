@@ -9,7 +9,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
-        width: '100%',
+        // width: '100%',
 
     },
     selectEmpty: {
@@ -17,17 +17,13 @@ const useStyles = makeStyles((theme) => ({
     },
     arrow : {
         "& .MuiSelect-icon" : {
-            position: 'absolute',
-            // right: '11px',
-            fontSize : '50px',
-            transform : 'scale(0.7, 1.5)',
-            color : 'black',
-            top : 0,
-            // left : 0
-            right : 0,
-            // verticalAlign: 'middle'
+
         }
-    }
+    },
+    // lang : {
+    //     position : 'absolute',
+    //     bottom : '0',
+    // }
     }));
 
     export default function NativeSelects() {
@@ -48,12 +44,13 @@ const useStyles = makeStyles((theme) => ({
 
     return (
         <div>
-        <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel htmlFor="outlined-age-native-simple" className="outLine">화폐단위를 선택하세요.</InputLabel>
+        <FormControl  className={classes.formControl}>
+            
             {/* <ArrowDropDownIcon 
             className={classes.arrow}  
             /> */}
             <Select
+            className={classes.lang}
             native
             value={state.age}
             onChange={handleChange}
@@ -65,12 +62,15 @@ const useStyles = makeStyles((theme) => ({
             className={classes.arrow}
             >
             
-            <option aria-label="None" value="" />
+            {/* <option value="" />
             <option value={10}>Ten</option>
             <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <option value={30}>Thirty</option> */}
+            <option  aria-label="한국어" value="">한국어</option>
+            <option value="영어">English</option>
+            <option value="일본어">日本</option>
+            <option value="중국어">中文</option>
             </Select>
-            <FormHelperText>{state.age ?"완료되었습니다." : "필수 입력사항입니다."}</FormHelperText>
         </FormControl>
         </div>
     );

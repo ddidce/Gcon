@@ -1,9 +1,9 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
-} */
+}
 
-.form1 {
+.form-content {
   position: absolute;
   width: 585px;
   height: 794px;
@@ -12,4 +12,72 @@
   top: 50%;
   left: 50%;
   transform: translate(-50% ,-50%);
+}
+
+.fButton {
+  width: 91px;
+  height: 37px;
+  border-radius: 4px;
+  background-color: #f15642;
+  border: none;
+  cursor: pointer;
+}
+
+.sButton {
+  width: 91px;
+  height: 37px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+
+}
+
+.sButton p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: underline;
+}
+
+.lang {
+  position: relative;
+  bottom: -27%;
+}
+
+h2 {
+  position: relative;
+  font-family: Arial;
+  font-size: 24px;
+  color: #2f2f2f;
+  margin-bottom: 10px;
+  top: 68px;
+}
+
+.sub_title {
+  /* 폰트 구매해야해서 임의로 작성 */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  top: 110px;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+
+.form-content .info_content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* position: relative; */
+  top: 80px;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  color: #1f1f1f;
+  margin-bottom: 20px;
 }
