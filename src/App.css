@@ -1,3 +1,8 @@
+@font-face {
+  font-family: NotoSans;
+  src: url('./assets/fonts/NotoSans-Regular.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,9 +29,9 @@
 }
 
 .sButton {
-  width: 91px;
   height: 37px;
   background-color: rgba(0, 0, 0, 0);
+  margin-left: 15px;
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -72,10 +77,11 @@ h2 {
 }
 
 .form-content .info_content {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: NotoSans;
+  font-weight: 600;
   /* position: relative; */
   top: 80px;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: -0.5px;
   text-align: left;
   color: #1f1f1f;

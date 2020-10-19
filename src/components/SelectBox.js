@@ -1,11 +1,11 @@
 import React from 'react';
 import '../css/SelectBox.css'
+import '../css/font.css'
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 
 
@@ -44,7 +44,8 @@ const fSelect = {
 
 //폰트 스타일링
 const fontStyle = {
-    color : '#ff0000'
+    color : '#ff0000',
+    fontFamily : 'AppleSDFont',
 }
 
     export default function NativeSelects() {

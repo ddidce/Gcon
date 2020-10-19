@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'
+import './css/font.css'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import SelectBox from './components/SelectBox';
@@ -46,23 +47,38 @@ const useStyles = makeStyles((theme) => ({
     const fontStyle = {
         left : '15px',
         color : '#ff0000',
+        fontFamily : 'AppleSDFont',
     }
 
     const fontStyle_se = {
         color : '#ff0000',
         left : '15px',
         top : '85px',
-        fontSize : '10.5px',
-        letterSpacing : '0.2px',
+        fontSize : '12px',
+        letterSpacing : '0.1px',
         width: '461px',
+        fontFamily : 'AppleSDFont',
     }
 
     const fontStyle_th = {
         color : '#ff0000',
         left : '15px',
         top : '100px',
+        fontFamily : 'AppleSDFont',
     }
 
+    const loginButton = {
+        color : 'rgba(0, 0, 0, 0.5)', 
+        textDecoration : 'underLine',
+        fontFamily : 'Roboto',
+        fontWeight : 600,
+        fontSize: '16px',
+        letterSpacing: '-2.15px',
+    }
+
+    const nextButton = {
+        color : '#fff',
+    }
 
     //컴포넌트
     const fTextFields = {
@@ -200,11 +216,11 @@ const useStyles = makeStyles((theme) => ({
             <NativePickers />
             <div style ={buttonStyle}>
                 <button className="fButton">
-                    <Link style={{color : '#fff'}}>다음</Link>
+                    <Link style={nextButton}>다음</Link>
                 </button>
 
-                <button className="sButton">
-                    <Link style={{color : 'rgba(0, 0, 0, 0.6)', textDecoration : 'underLine'}}>로그인</Link>
+                <button className="sButton" >
+                    <Link style={loginButton}>로그인</Link>
                 </button>
             </div>
         </form>

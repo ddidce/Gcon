@@ -11,6 +11,7 @@ import {
     } from '@material-ui/pickers';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { FormHelperText } from '@material-ui/core';
+import '../css/font.css'
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -49,6 +50,7 @@ import { FormHelperText } from '@material-ui/core';
         position : 'relative',
         top : '-10px',
         left : '-58px',
+        fontFamily : 'AppleSDFont',
     }
 
     const fPickers = {
@@ -69,7 +71,7 @@ import { FormHelperText } from '@material-ui/core';
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ko}>
         <Grid container justify="space-around" className={classes.root} style={fPickers}>
-            <KeyboardDatePicker 
+            <KeyboardDatePicker
             disableToolbar
             inputVariant="outlined"  
             format="MM/dd/yyyy"
@@ -81,11 +83,9 @@ import { FormHelperText } from '@material-ui/core';
             KeyboardButtonProps={{
                 'aria-label': 'change date',
             }}
-            className={classes.text}
             keyboardIcon={<ArrowDropDownIcon 
                             className={classes.arrow}
-                            
-                            />}
+                        />}
             >
             </KeyboardDatePicker> 
             <FormHelperText style={fontStyle}>
