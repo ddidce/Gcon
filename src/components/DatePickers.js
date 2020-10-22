@@ -59,38 +59,35 @@ import '../css/font.css'
 
     export default function MaterialUIPickers() {
         const classes = useStyles();
-    // The first commit of Material-UI
-    const [selectedDate, setSelectedDate] = useState(null);
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-        console.log(date);
-    };
+        const [selectedDate, setSelectedDate] = useState(null);
+        const handleDateChange = (date) => {
+            setSelectedDate(date);
+            console.log(date);
+        };
 
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ko}>
-        <Grid container justify="space-around" className={classes.root} style={fPickers}>
-            <KeyboardDatePicker
-            disableToolbar
-            inputVariant="outlined"  
-            format="MM/dd/yyyy"
-            margin="normal"
-            id="date-picker-inline"
-            placeholder="설립일을 선택하세요."
-            value={selectedDate}
-            onChange={handleDateChange}
-            KeyboardButtonProps={{
-                'aria-label': 'change date',
-            }}
-            keyboardIcon={<ArrowDropDownIcon 
-                            className={classes.arrow}
-                        />}
-            >
-            </KeyboardDatePicker> 
-            <FormHelperText style={fontStyle}>
-                {selectedDate ?"완료되었습니다." : "필수 입력사항입니다."}
-            </FormHelperText>
-        </Grid>
+            <Grid container justify="space-around" className={classes.root} style={fPickers}>
+                <KeyboardDatePicker
+                disableToolbar
+                inputVariant="outlined"  
+                format="MM/dd/yyyy"
+                margin="normal"
+                id="date-picker-inline"
+                placeholder="설립일을 선택하세요."
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                    'aria-label': 'change date',
+                }}
+                keyboardIcon={<ArrowDropDownIcon 
+                                className={classes.arrow}/>}
+                />
+                {/* </KeyboardDatePicker>  */}
+                <FormHelperText style={fontStyle}>
+                    {selectedDate ?"완료되었습니다." : "필수 입력사항입니다."}
+                </FormHelperText>
+            </Grid>
         </MuiPickersUtilsProvider>
     );
 }
