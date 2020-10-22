@@ -88,7 +88,6 @@ export default function MaterialUIPickers() {
                         <ArrowDropDownIcon className={classes.arrowBtn} />
                     }
                 />
-                {/* </KeyboardDatePicker>  */}
                 <FormHelperText style={pickerSubTxt}>
                     {selectedDate ? '완료되었습니다.' : '필수 입력사항입니다.'}
                 </FormHelperText>

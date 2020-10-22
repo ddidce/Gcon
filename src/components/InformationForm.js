@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import MoneySelect from './MoneySelect';
 import DatePicker from './DatePicker';
 import Radio from './Radio';
-import LangSelect from './LangSelect';
+import LanguageSelect from './LanguageSelect';
 import { FormHelperText, Link } from '@material-ui/core';
 
 //이메일 유효성검사
@@ -227,7 +227,7 @@ export default function BasicTextFields() {
                 </div>
             </form>
             <div className="lang" style={langSelect}>
-                <LangSelect className={classes.lang} />
+                <LanguageSelect className={classes.lang} />
             </div>
         </div>
     );
